@@ -1,13 +1,21 @@
 package edu.git;
 
-public class Pessoa {
+import java.io.Serializable;
+
+public class Pessoa implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private String nome;
+	private int idade;
 	
-	private final String nome;
-	private final int idade;
+	public Pessoa() {
+		this.setNome("");
+		this.setIdade(0);
+		
+	}
 
 	public Pessoa(String nome, int idade){
-		this.nome = nome;
-		this.idade = idade;
+		this.setNome(nome);
+		this.setIdade(idade);
 		
 	}
 
@@ -17,6 +25,14 @@ public class Pessoa {
 
 	public int getIdade() {
 		return idade;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 
 }
